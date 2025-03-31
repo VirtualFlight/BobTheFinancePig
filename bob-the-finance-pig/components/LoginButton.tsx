@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, Pressable} from 'react-native';
 
 export default function LoginButton({borderColor, backgroundColor, textColor, textMessage}) {
   return (
-
+    
     <Pressable style={[styles.loginButtonContainer, {borderColor, backgroundColor}]}>
         <Text style={[styles.text, {color: textColor}]}> {textMessage} </Text>
     </Pressable>
