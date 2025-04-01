@@ -13,6 +13,8 @@ export default function RootLayout() {
 
     <Stack screenOptions={{headerShown:false,}}>
       <Stack.Screen name="index"></Stack.Screen>
+      <Stack.Screen name="main"></Stack.Screen>
+
     </Stack>
   </ThemeProvider>
   );
