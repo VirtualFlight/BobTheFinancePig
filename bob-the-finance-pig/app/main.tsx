@@ -21,7 +21,7 @@ export default function Main() {
     <View className="h-full gap-4 py-10 items-center">
       <Header/>
 
-        <View className="gap-2 w-full items-center border-2 border-blue-500 mt-16 mb-0">
+        <View className="gap-2 w-full items-center mt-16 mb-0">
           <Text className="text-white font-bold text-xl">Top Stocks</Text>
           <Text className="text-white text-opacity-90 text-lg">Bitcoin (BTC)</Text>
         </View>
@@ -68,7 +68,7 @@ export default function Main() {
         
         <View className="flex-row justify-center gap-3 py-5">
 
-          <View className="items-center justify-center gap-4py-6">
+          <View className="items-center justify-center gap-4">
             <Text className="text-white font-semibold text-[12px]">AI Recommendation:</Text>
             <View className="bg-[#1A1A1A] rounded-xl w-40 ">
               <AiRecommendation></AiRecommendation>
@@ -110,8 +110,10 @@ export default function Main() {
 
 
 
-
-      <NavBar></NavBar>
+      
+        <View className="w-screen absolute bottom-12 m-0 left-0">
+            <NavBar/>
+        </View>
 
         
     </View>
