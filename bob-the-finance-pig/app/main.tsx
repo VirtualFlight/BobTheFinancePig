@@ -4,19 +4,16 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import {LineChart} from "react-native-chart-kit";
 import AiRecommendation from "@/components/AiRecommendation";
+import HumanRecommendation from "@/components/HumanRecommendation";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
 import "../global.css"
-import { styled } from "nativewind";
+
 
 export default function Main() {
   const screenWidth = Dimensions.get("window").width;
-  // const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
-  // const filteredLabels = labels.map((label, index) => 
-  //   index % 2 === 0 ? label : "" // Shows every 2nd label
-  // );
   const data = {
     labels: [],
-    datasets: [{ data: [20, 45, 28, 80, 99] }],
+    datasets: [{ data: [20, 50, 40, 80, 99] }],
   };
 
 
@@ -27,17 +24,17 @@ export default function Main() {
       <Header></Header>
 
         <View className="gap-2 w-full items-center">
-          <Text className="text-white font-bold text-4xl">Top Stocks</Text>
-          <Text className="text-white text-opacity-90 text-xl">Bitcoin (BTC)</Text>
+          <Text className="text-white font-bold text-xl">Top Stocks</Text>
+          <Text className="text-white text-opacity-90 text-lg">Bitcoin (BTC)</Text>
         </View>
         {/* Graph */}
-        <View className="h-2/6">
+        <View className="h-1/5">
 
           <ScrollView scrollEnabled={false} contentContainerStyle={{alignItems: "center", justifyContent: "center"}}>
             <LineChart
               data={data}
               width={screenWidth+100}
-              height={300}
+              height={200}
               chartConfig={{
                 backgroundGradientFrom: "#000", //change this to 000 later
                 backgroundGradientTo: "#000", //change this to 000 later
@@ -71,20 +68,38 @@ export default function Main() {
       
         </View>
         
-        <View className="items-center justify-center border-4 border-purple-200 gap-4 ">
-          <Text className="text-white font-bold">AI Recommendation:</Text>
-          <View className="bg-[#1A1A1A] rounded-xl w-40 ">
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
+        <View className="flex-row justify-center gap-3 py-5">
+
+          <View className="items-center justify-center gap-4">
+            <Text className="text-white font-semibold text-[12px]">AI Recommendation:</Text>
+            <View className="bg-[#1A1A1A] rounded-xl w-40 ">
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
 
 
+            </View>
           </View>
-        </View>
 
+          <View className="gap-4 items-center">
+            <Text className="text-white font-bold text-[12px]">Human Recommendation:</Text>
+            <View className="gap-3 w-40">
+              
+              <HumanRecommendation></HumanRecommendation>
+              <HumanRecommendation></HumanRecommendation>
+              <HumanRecommendation></HumanRecommendation>
+
+            </View>
+          </View>
+
+
+
+
+        </View>
+        
 
 
       
