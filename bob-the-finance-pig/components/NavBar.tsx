@@ -7,14 +7,15 @@ import BobIcon from '../assets/images/bob-the-pig-icon.svg';
 export default function NavBar() {
   const router = useRouter();
   return (
-    <View className="flex-row items-center justify-between">
-        <Pressable onPress={() => router.navigate('/')} className="items-center justify-center">
+    
+    <View className="flex-row justify-around">
+        <Pressable onPress={() => router.navigate('/main')} className="items-center justify-center">
             {/* <Text> Hello</Text> */}
             <HomeIcon width={24} height={24}></HomeIcon>
             <Text className='text-white text-[8px]'>Home</Text>
         </Pressable>
 
-        <Pressable className="items-center justify-center ">
+        <Pressable onPress={() => router.navigate('/search')} className="items-center justify-center ">
             <SearchIcon width={24} height={24}></SearchIcon>
             <Text className="text-white text-[8px]">Search</Text>
         </Pressable>

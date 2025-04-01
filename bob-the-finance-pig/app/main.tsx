@@ -16,28 +16,26 @@ export default function Main() {
   // );
   const data = {
     labels: [],
-    datasets: [{ data: [20, 45, 28, 80, 99] }],
+    datasets: [{ data: [20, 50, 40, 80, 99] }],
   };
 
 
   return (
-    <View className="px-3 h-full gap-4 py-10">
-        
-        
-      <Header></Header>
+    <View className="h-full gap-4 py-10 items-center">
+      <Header/>
 
-        <View className="gap-2 w-full items-center">
-          <Text className="text-white font-bold text-4xl">Top Stocks</Text>
-          <Text className="text-white text-opacity-90 text-xl">Bitcoin (BTC)</Text>
+        <View className="gap-2 w-full items-center border-2 border-blue-500 mt-16 mb-0">
+          <Text className="text-white font-bold text-xl">Top Stocks</Text>
+          <Text className="text-white text-opacity-90 text-lg">Bitcoin (BTC)</Text>
         </View>
         {/* Graph */}
-        <View className="h-2/6">
+        <View className="h-1/5">
 
           <ScrollView scrollEnabled={false} contentContainerStyle={{alignItems: "center", justifyContent: "center"}}>
             <LineChart
               data={data}
               width={screenWidth+100}
-              height={300}
+              height={200}
               chartConfig={{
                 backgroundGradientFrom: "#000", //change this to 000 later
                 backgroundGradientTo: "#000", //change this to 000 later
@@ -71,7 +69,7 @@ export default function Main() {
       
         </View>
         
-        <View className="items-center justify-center border-4 border-purple-200 gap-4 ">
+        <View className="items-center justify-center border-4 border-purple-200 gap-4 py-6">
           <Text className="text-white font-bold">AI Recommendation:</Text>
           <View className="bg-[#1A1A1A] rounded-xl w-40 ">
             <AiRecommendation></AiRecommendation>
@@ -85,27 +83,9 @@ export default function Main() {
           </View>
         </View>
 
-
-
-      
-            
-
-
-        
-
-
-
-
-
-
-      <NavBar></NavBar>
-
-        
+        <View className="w-screen absolute bottom-12 m-0 left-0 border-2 border-orange-400">
+          <NavBar/>
+        </View>
     </View>
-
-    
-    
   );
-
-
 }
