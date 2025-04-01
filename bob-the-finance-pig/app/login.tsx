@@ -3,6 +3,7 @@ import { Link } from "expo-router";
 import { Text, View, ScrollView, StyleSheet, Image } from "react-native";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
 
+
 export default function Login() {
   return (
     <ScrollView style={styles.main}>

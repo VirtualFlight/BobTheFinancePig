@@ -3,7 +3,7 @@ import NavBar from "@/components/NavBar";
 import { Link } from "expo-router";
 import { Text, View, ScrollView, StyleSheet, Image, StatusBar } from "react-native";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
-
+import "../global.css"
 
 export default function Index() {
   return (

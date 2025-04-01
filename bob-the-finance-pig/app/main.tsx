@@ -4,7 +4,7 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import {LineChart} from "react-native-chart-kit";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
-
+import "../global.css"
 
 
 export default function Main() {
@@ -27,8 +27,8 @@ const data = {
           width={screenWidth - 20}
           height={220}
           chartConfig={{
-            backgroundGradientFrom: "#000",
-            backgroundGradientTo: "#000",
+            backgroundGradientFrom: "#fff",
+            backgroundGradientTo: "#fff",
             color: (opacity = 1) => `rgba(0, 122, 255, ${opacity})`,
             labelColor: () => "#666",
             
