@@ -4,16 +4,13 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import {LineChart} from "react-native-chart-kit";
 import AiRecommendation from "@/components/AiRecommendation";
+import HumanRecommendation from "@/components/HumanRecommendation";
 // import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
 import "../global.css"
-import { styled } from "nativewind";
+
 
 export default function Main() {
   const screenWidth = Dimensions.get("window").width;
-  // const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
-  // const filteredLabels = labels.map((label, index) => 
-  //   index % 2 === 0 ? label : "" // Shows every 2nd label
-  // );
   const data = {
     labels: [],
     datasets: [{ data: [20, 50, 40, 80, 99] }],
@@ -24,7 +21,7 @@ export default function Main() {
     <View className="h-full gap-4 py-10 items-center">
       <Header/>
 
-        <View className="gap-2 w-full items-center border-2 border-blue-500 mt-16 mb-0">
+        <View className="gap-2 w-full items-center mt-16 mb-0">
           <Text className="text-white font-bold text-xl">Top Stocks</Text>
           <Text className="text-white text-opacity-90 text-lg">Bitcoin (BTC)</Text>
         </View>
@@ -69,23 +66,56 @@ export default function Main() {
       
         </View>
         
-        <View className="items-center justify-center border-4 border-purple-200 gap-4 py-6">
-          <Text className="text-white font-bold">AI Recommendation:</Text>
-          <View className="bg-[#1A1A1A] rounded-xl w-40 ">
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
-            <AiRecommendation></AiRecommendation>
+        <View className="flex-row justify-center gap-3 py-5">
+
+          <View className="items-center justify-center gap-4">
+            <Text className="text-white font-semibold text-[12px]">AI Recommendation:</Text>
+            <View className="bg-[#1A1A1A] rounded-xl w-40 ">
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
+              <AiRecommendation></AiRecommendation>
 
 
+            </View>
           </View>
+
+          <View className="gap-4 items-center">
+            <Text className="text-white font-bold text-[12px]">Human Recommendation:</Text>
+            <View className="gap-3 w-40">
+              
+              <HumanRecommendation></HumanRecommendation>
+              <HumanRecommendation></HumanRecommendation>
+              <HumanRecommendation></HumanRecommendation>
+
+            </View>
+          </View>
+
+
+
+
         </View>
 
-        <View className="w-screen absolute bottom-0 m-0 left-0">
-          <NavBar/>
+
+
+      
+            
+
+
+        
+
+
+
+
+
+      
+        <View className="w-screen absolute bottom-12 m-0 left-0">
+            <NavBar/>
         </View>
+
+        
     </View>
   );
 }
