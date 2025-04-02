@@ -111,7 +111,7 @@ export default function Main() {
 
 
       
-        <View className="w-screen absolute bottom-12 m-0 left-0">
+        <View className="w-screen absolute bottom-0 m-0 left-0">
             <NavBar/>
         </View>
 
