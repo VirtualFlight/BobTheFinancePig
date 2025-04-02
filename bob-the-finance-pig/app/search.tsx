@@ -15,7 +15,7 @@ export default function Search() {
         <Header/>
 
         <View className="mt-20 w-full h-full gap-10">
-            <SearchBar/>
+            <SearchBar isHidden={true}/>
             <SearchCard/>
 
         </View>

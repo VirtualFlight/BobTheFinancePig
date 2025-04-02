@@ -10,7 +10,7 @@ export default function CategoryItem({name, icon, percent, percentColor = '#FFFF
         <GoogleIcon width={16} height={16} />
         <Text className='text-white text-base'>{name}</Text>
         </View>
-        <Text style={{ color: percentColor }} className='text-base'>{percent}%</Text>
+        <Text style={{ color: percentColor }} className='text-xs'>{percent}%</Text>
       </View>
     );
   }
