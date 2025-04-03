@@ -34,45 +34,61 @@ export default function StockInfo() {
                   <GoogleIcon height={24} width={24}/>
                   <Text className="text-white text-xl">{cost}</Text>
                 </View>
-              <ScrollView className="w-full mb-48" contentContainerStyle={{ flex: 1 }}>
-                <View className="w-full h-full p-4 gap-4">
-                  <View className='w-full h-3/4 bg-gray-900'>
-                  <LineChart
-                                data={data}
-                                width={screenWidth}
-                                height={250}
-                                chartConfig={{
-                                  backgroundGradientFrom: "#000", //change this to 000 later
-                                  backgroundGradientTo: "#000", //change this to 000 later
-                                  color: (opacity = 1) => `rgba(91, 3, 186, ${opacity})`,
-                                  labelColor: () => "#fff",
-                                  fillShadowGradientFrom:"#5B03BA",
-                                  fillShadowGradientTo:"#000000",
-                                  fillShadowGradientOpacity: 1, // 👈 Ensure the gradient is visible
-                                  
-                                  propsForLabels: {
-                                    fontSize: 10, // Decrease label size
-                                  },
-                                  decimalPlaces:0,
-                                }}
-                                bezier
-                                yAxisLabel=""
-                                withDots={false}
-                                withInnerLines={false}
-                                withOuterLines={false}
-                                formatYLabel={() => ""} // Hides Y-axis labels
-                              />
+              <ScrollView className="w-full mb-48 flex-col" contentContainerStyle={{paddingBottom: 120}}>
+                <View className="w-full h-full p-4 flex-col">
+                  <View className='w-full h-3/4 items-center flex-col justify-center'>
+                          <LineChart
+                          data={data}
+                          width={screenWidth+115}
+                          height={300}
+                          chartConfig={{
+                          backgroundGradientFrom: "#000", //change this to 000 later
+                          backgroundGradientTo: "#000", //change this to 000 later
+                          color: (opacity = 1) => `rgba(91, 3, 186, ${1})`,
+                          labelColor: () => "#fff",
+                          fillShadowGradientFrom:"#5B03BA",
+                          fillShadowGradientTo:"#000000",
+                          fillShadowGradientOpacity: 1, // 👈 Ensure the gradient is visible
+                          propsForLabels: {
+                          fontSize: 10, // Decrease label size
+                          },
+                          decimalPlaces:0,
+                          }}
+                          bezier
+                          yAxisLabel=""
+                          withDots={false}
+                          withInnerLines={false}
+                          withOuterLines={false}
+                          formatYLabel={() => ""} // Hides Y-axis labels
+                          style={{
+                          marginLeft: 20, // Counteract the extra width
+                          }}
+                          />
+                      <View className="flex-row items-center justify-between w-full">
+                                <Text className="text-white text-[8px]">1D</Text> 
+                                <Text className="text-white text-[8px]">1W</Text> 
+                                <Text className="text-white text-[8px]">1M</Text> 
+                                <Text className="text-white text-[8px]">3M</Text> 
+                                <Text className="text-white text-[8px]">1Y</Text> 
+                                <Text className="text-white text-[8px]">5Y</Text> 
+                        </View>
                   </View>
                   <View className='w-full h-1/4 border-t-2 border-t-[#212121] justify-center items-center gap-8'>
-                    <View className='flex-row gap-24 justify-center'>
-                      <Text className='text-[#555555]'>Open: ###</Text>
-                      <Text className='text-[#555555]'>Vol: ###</Text>
+                    <View className='flex-row justify-evenly w-full'>
+                      <Text className='text-[#555555] border-r-[1px] border-[#212121] w-1/2 text-center'>Open: ###</Text>
+                      <Text className='text-[#555555] border-l-[1px] border-[#212121] w-1/2 text-center'>Vol: ###</Text>
                     </View>
-                    <View className='flex-row gap-24'>
-                      <Text className='text-[#555555]'>High: ###</Text> 
-                      <Text className='text-[#555555]'>Low: ###</Text>
+                    <View className='flex-row justify-evenly w-full'>
+                      <Text className='text-[#555555] border-r-[1px] border-[#212121] w-1/2 text-center'>High: ###</Text> 
+                      <Text className='text-[#555555] border-l-[1px] border-[#212121] w-1/2 text-center'>Low: ###</Text>
                     </View>
                   </View>
+                    <Text className='text-white pb-20 text-center'>
+                      Bitcoin is the currency of the Internet: a distributed, worldwide, decentralized digital money. 
+                      Unlike traditional currencies such as dollars, bitcoins are issued and managed without any central 
+                      authority whatsoever: there is no government, company, or bank in charge of Bitcoin. As such, it is 
+                      more resistant to wild inflation and corrupt banks....
+                    </Text>
 
                 </View>
               </ScrollView>

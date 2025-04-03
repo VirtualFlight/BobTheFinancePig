@@ -18,7 +18,7 @@ export default function SearchingNow() {
             <SearchBar isHidden={false}/>
             <ScrollView>
                 <View className="flex-row justify-center h-fit mb-52 p-0">
-                    <View className='w-5/6 items-center h-fit rounded-3xl gap-4'>
+                    <View className='w-5/6 items-center h-fit rounded-3xl'>
                         <View className="gap-4">
                             {/* for testing purposes */}
                             <SearchingNowItem percent={'-3.18'} cost={'127,002,174'} percentColor={'#BE4545'} name={'Bitcoin'}/>
