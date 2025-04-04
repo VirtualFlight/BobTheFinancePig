@@ -138,9 +138,11 @@ async function fmpCaller(symbol) {
 
                     // Make sure we have the data in the expected format
                     if (parsedData && parsedData[0]) {
+                        let roundedPrice = roundTo(parsedData[0].price,2);
+                        let roundedChanges = roundTo(parsedData[0].changes,2);
                         const informationArray = [
-                            parsedData[0].price,
-                            parsedData[0].changes,
+                            roundedPrice,
+                            roundedChanges,
                             parsedData[0].image
                         ];
                         resolve(informationArray); // Resolve the Promise with the informationArray
@@ -160,3 +162,7 @@ async function fmpCaller(symbol) {
         req.end(); // Close the request
     });
 }
+
+function roundTo(num, decimals) {
+    return Number(num.toFixed(decimals));
+  }

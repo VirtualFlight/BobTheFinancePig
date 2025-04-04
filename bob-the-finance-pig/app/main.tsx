@@ -21,14 +21,14 @@ export default function Main() {
   const [message, setMessage] = useState({});
 
   useEffect(() => {
-    axios.get("http://10.0.0.49:5000/") // Change 'localhost' to your machine's IP if using a real device
+    axios.get("http://10.45.207.30:5000/") // Change 'localhost' to your machine's IP if using a real device
       .then(response => setMessage(response.data.message))
       .catch(error => console.log(error));
   }, []);
 
   const items = [];
   for (const property in message) {
-    items.push(<AiRecommendation symbol={property} price={message[property][0]} change={message[property][1]} image={message[property][2]}></AiRecommendation>);
+    items.push(<AiRecommendation symbol={property} price={message[property][0]} change={message[property][1]} image={message[property][2]} key={property}></AiRecommendation>);
   }
   
   
