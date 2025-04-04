@@ -1,9 +1,11 @@
 import {View, Text, StyleSheet, Pressable} from 'react-native';
+import { useRouter } from 'expo-router';
 
-export default function LoginButton({borderColor, backgroundColor, textColor, textMessage}) {
+export default function LoginButton({borderColor, backgroundColor, textColor, textMessage, path}) {
+  const router = useRouter();
   return (
-
-    <Pressable style={[styles.loginButtonContainer, {borderColor, backgroundColor}]}>
+    
+    <Pressable onPress={() => router.navigate(path)} style={[styles.loginButtonContainer, {borderColor, backgroundColor}]}>
         <Text style={[styles.text, {color: textColor}]}> {textMessage} </Text>
     </Pressable>
 
@@ -16,7 +18,7 @@ const styles = StyleSheet.create({
   },
 
   loginButtonContainer:{
-    color: 'white',
+    // color: 'white',
     height: 64,
     borderWidth: 2,
     borderRadius: 10,
@@ -34,3 +36,4 @@ const styles = StyleSheet.create({
 
   
 });
+
