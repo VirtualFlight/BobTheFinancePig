@@ -14,6 +14,9 @@ export default function Tracker() {
             {/* <View className="w-full h-1/3 bg-[#ffffff]"></View>
             <View className="w-full h-1/3 bg-[#ffffff]"></View>
             <View className="w-full h-1/3 bg-[#ffffff]"></View> */}
+            <View className="w-full justify-center items-center">
+                <Text className="text-white ">Expense Tracker</Text>
+            </View>
 
 
 

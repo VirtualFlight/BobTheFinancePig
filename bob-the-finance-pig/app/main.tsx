@@ -52,7 +52,7 @@ export default function Main() {
               chartConfig={{
                 backgroundGradientFrom: "#000", //change this to 000 later
                 backgroundGradientTo: "#000", //change this to 000 later
-                color: (opacity = 1) => `rgba(91, 3, 186, ${opacity})`,
+                color: (opacity = 1) => `rgba(91, 3, 186, ${1})`,
                 labelColor: () => "#fff",
                 fillShadowGradientFrom:"#5B03BA",
                 fillShadowGradientTo:"#000000",
