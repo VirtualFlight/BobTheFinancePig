@@ -1,5 +1,6 @@
-import {View, Text, StyleSheet, Pressable, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Pressable, Dimensions, Image} from 'react-native';
 import { useRouter } from 'expo-router';
+import { useState } from 'react';
 import GoogleIcon from "../assets/images/google-icon.svg";
 import { useLocalSearchParams } from 'expo-router';
 import NavBar from "@/components/NavBar"; 
@@ -20,8 +21,11 @@ export default function StockInfo() {
         cost = '$103,802,581', 
         percent = '0', 
         percentColor = '#FFFFFF', 
-        name = 'Google' 
+        name = 'Google',
+        icon = `https://financialmodelingprep.com/image-stock/GE.png?apikey=`
     } = params;
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     return (
         <View className="h-full w-full items-center py-10">
             <Header/>
@@ -31,10 +35,21 @@ export default function StockInfo() {
                     <BackIcon height={20} width={20} />
                   </Pressable>
                   <Text className="text-white text-lg">{name}</Text>
-                  <GoogleIcon height={24} width={24}/>
+                  <Image
+                    source={{ 
+                      uri: icon 
+                    }}
+                    style={{ 
+                      width: 30, 
+                      height: 30,
+                      display: 'flex'
+                    }}
+                  />
                   <Text className="text-white text-xl">{cost}</Text>
+                  <Text className="text-white text-xs" style={{ color: percentColor }}>{percent}% Today</Text>
                 </View>
-              <ScrollView className="w-full mb-48 flex-col" contentContainerStyle={{paddingBottom: 120}}>
+              <ScrollView className="w-full mb-48 flex-col" contentContainerStyle={{paddingBottom: 140}}> 
+                {/* ^ THIS IS WHERE THE BOTTOM PADDING/MARGIN IS MESSED WITH */}
                 <View className="w-full h-full p-4 flex-col">
                   <View className='w-full h-3/4 items-center flex-col justify-center'>
                           <LineChart
@@ -44,7 +59,7 @@ export default function StockInfo() {
                           chartConfig={{
                           backgroundGradientFrom: "#000", //change this to 000 later
                           backgroundGradientTo: "#000", //change this to 000 later
-                          color: (opacity = 1) => `rgba(91, 3, 186, ${1})`,
+                          color: () => `rgba(91, 3, 186, ${1})`,
                           labelColor: () => "#fff",
                           fillShadowGradientFrom:"#5B03BA",
                           fillShadowGradientTo:"#000000",
@@ -83,11 +98,12 @@ export default function StockInfo() {
                       <Text className='text-[#555555] border-l-[1px] border-[#212121] w-1/2 text-center'>Low: ###</Text>
                     </View>
                   </View>
-                    <Text className='text-white pb-20 text-center'>
-                      Bitcoin is the currency of the Internet: a distributed, worldwide, decentralized digital money. 
-                      Unlike traditional currencies such as dollars, bitcoins are issued and managed without any central 
-                      authority whatsoever: there is no government, company, or bank in charge of Bitcoin. As such, it is 
-                      more resistant to wild inflation and corrupt banks....
+                    <Text className='text-white text-center'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                      dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                      officia deserunt mollit anim id est laborum.
                     </Text>
 
                 </View>

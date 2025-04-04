@@ -4,6 +4,7 @@ import CategoryItem from "@/components/CategoryItem";
 
 export default function SearchCard() {
     const router = useRouter();
+    const topStock = ['AAPL', 'MSFT', 'NVDA', 'AMZN', 'META'];
     return (
         <View className="flex-row justify-center h-3/4 m-0 p-0">
           <View className='border-2 border-gray-900 w-2/3 items-center h-5/6 bg-[#0a0a0a] rounded-3xl p-4 gap-2'>

@@ -6,4 +6,8 @@ config.transformer.babelTransformerPath = require.resolve("react-native-svg-tran
 config.resolver.assetExts = config.resolver.assetExts.filter(ext => ext !== "svg");
 config.resolver.sourceExts.push("svg");
 
+config.transformer.envBlacklist = ['API_KEY']; // Prevent bundler from inlining
+
+module.exports = config;
+
 module.exports = withNativeWind(config, { input: './global.css' })

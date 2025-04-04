@@ -5,7 +5,7 @@ import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 import SearchIcon from "../assets/images/Search.svg";
 
 
-export default function SearchBar({ isHidden = false }: { isHidden?: boolean }) {
+export default function SearchBar({ searchQuery, setSearchQuery, isHidden = false,  }: { isHidden?: boolean }) {
     const router = useRouter();
     return (
         <View className="w-full flex-row justify-center items-center">
@@ -21,11 +21,13 @@ export default function SearchBar({ isHidden = false }: { isHidden?: boolean }) 
                         <Text className='text-[#aaaaaa]'>Search</Text>
                     )}
                     {!isHidden && (
-                        <TextInput 
-                            placeholder="Search" 
-                            placeholderTextColor="#aaaaaa" 
-                            className="text-white flex-1 w-full h-full"
-                        />
+                        <TextInput
+                        placeholder="Search"
+                        placeholderTextColor="#aaaaaa"
+                        className="text-white flex-1"
+                        value={searchQuery}
+                        onChangeText={setSearchQuery}
+                    />
                     )}
                 </Pressable>
             </View>
